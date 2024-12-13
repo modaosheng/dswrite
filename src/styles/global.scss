@@ -1,0 +1,8 @@
+@use './theme.scss' as *;
+
+// 全局通用类
+.text-primary {
+  color: $text-primary;
+}
+
+// ... rest of the file ... 

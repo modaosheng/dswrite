@@ -1,0 +1,130 @@
+// 主题色
+$primary-color: #F0876A;  // 主色调：温暖的珊瑚色
+$primary-light: #FFB4A2;  // 浅色变体
+$primary-dark: #E67E5C;   // 深色变体
+
+$secondary-color: #6D9886;  // 次要色：柔和的青绿色
+$secondary-light: #A7C4B5;
+$secondary-dark: #557669;
+
+// 功能色
+$success-color: #7FB069;  // 柔和的绿色
+$warning-color: #FFB95C;  // 温暖的橙色
+$error-color: #E87461;    // 柔和的红色
+$info-color: #6C9DC6;     // 柔和的蓝色
+
+// 中性色
+$text-primary: #3D4B59;    // 深灰蓝色，不那么刺眼
+$text-secondary: #768390;  // 中灰色
+$text-disabled: #C2C8CC;   // 浅灰色
+
+$background-primary: #FFFFFF;  // 纯白背景
+$background-secondary: #FAF9F8;  // 温暖的灰白色
+$background-tertiary: #F5F2F0;  // 米白色背景
+
+$border-color: #E8E6E4;  // 温暖的边框色
+$divider-color: #F0EEEC;  // 柔和的分割线颜色
+
+// 间距
+$spacing-xs: 4rpx;
+$spacing-sm: 8rpx;
+$spacing-md: 16rpx;
+$spacing-lg: 24rpx;
+$spacing-xl: 32rpx;
+$spacing-xxl: 48rpx;
+
+// 圆角
+$radius-sm: 4rpx;
+$radius-md: 8rpx;
+$radius-lg: 16rpx;
+$radius-xl: 24rpx;
+$radius-full: 999rpx;
+
+// 阴影
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 10px 15px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// 字体大小
+$font-xs: 20rpx;
+$font-sm: 24rpx;
+$font-md: 28rpx;
+$font-lg: 32rpx;
+$font-xl: 36rpx;
+$font-xxl: 48rpx;
+
+// 字重
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+// 动画
+$transition-fast: 150ms;
+$transition-normal: 250ms;
+$transition-slow: 350ms;
+
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+// 混入
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin multi-ellipsis($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// 动画
+@mixin transition-all {
+  transition: all $transition-normal $ease-in-out;
+}
+
+@mixin hover-scale {
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+// 毛玻璃效果
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+// 渐变背景
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $primary-color, $primary-light);
+}
+
+@mixin gradient-secondary {
+  background: linear-gradient(135deg, $secondary-color, $secondary-light);
+} 
